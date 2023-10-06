@@ -44,6 +44,7 @@
         <textarea name="message" rows="2" cols="15"></textarea>
         <br>
         <button type="submit" onclick="call_confirm()">Add</button>
+        <li><a href="https://fanciful-monstera-d69f4b.netlify.app/index.html">Back</a></li>
     </form>
 
     <script type="text/javascript">
@@ -61,7 +62,7 @@
             } else {
                 if (confirm("저장하시겠습니까?")) {
                     // Build the URL with query parameters
-                    window.location.href = "https://fanciful-monstera-d69f4b.netlify.app/index.html";
+                    document.querySelector('form').submit();
                 } else {
                     alert("제출실패");
                 }
