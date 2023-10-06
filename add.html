@@ -61,10 +61,7 @@
             } else {
                 if (confirm("저장하시겠습니까?")) {
                     // Build the URL with query parameters
-                    var url = `https://fanciful-monstera-d69f4b.netlify.app/index.html?name=${name}&number=${number}&gender=${gender.value}&birthday=${birthday}&group=${group}`;
-
-                    // Redirect to the main HTML page with the query parameters
-                    window.location.href = url;
+                    window.location.href = "https://fanciful-monstera-d69f4b.netlify.app/index.html";
                 } else {
                     alert("제출실패");
                 }
