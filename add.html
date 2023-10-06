@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="addinput" href="">
     <style>
         .navbar {
         margin-bottom: 0;
@@ -19,9 +17,37 @@
         padding: 25px;
         }
     </style>
-    <title>Document</title>
+    <title>Add Page</title>
+</head>
+<body>
+    <form>
+        <label for="name">이름:</label><br>
+        <input type="text" id="name" name="name" class="check" placeholder="이름을 입력해주세요." autocomplete="off">
+        <p></p>
+        <br>
+        <label for="number">전화번호:</label><br>
+        <input type="text" id="number" name="number" class="check" placeholder="010-0000-0000" autocomplete="off"><br>
+        <input type="radio" id="man" name="gender" value="man">
+        <label for="man">Man</label><br>
+        <input type="radio" id="girl" name="gender" value="girl">
+        <label for="girl">Girl</label><br>
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday">
+        <label for="group">Group:</label>
+        <select id="group" name="group">
+            <option value="family">Family</option>
+            <option value="coworker">Coworker</option>
+            <option value="friend">Friend</option>
+            <option value="etc">Etc</option>
+        </select>
+        <br>
+        <textarea name="message" rows="2" cols="15"></textarea>
+        <br>
+        <button type="button" onclick="call_confirm()">Add</button>
+    </form>
+
     <script type="text/javascript">
-        function call_confirm(name, number, gender, birthday, group){
+        function call_confirm() {
             // Get the values of the input fields
             var name = document.getElementById("name").value.trim();
             var number = document.getElementById("number").value.trim();
@@ -34,14 +60,8 @@
                 alert("모든 필수 항목을 작성해주세요.");
             } else {
                 if (confirm("제출하시겠습니까?")) {
-                    var name = document.getElementById("name").value;
-                    var number = document.getElementById("number").value;
-                    var gender = document.querySelector('input[name="gender"]:checked').value;
-                    var birthday = document.getElementById("birthday").value;
-                    var group = document.getElementById("group").value;
-
                     // Construct the query string with the values
-                    var queryString = `?name=${name}&number=${number}&gender=${gender}&birthday=${birthday}&group=${group}`;
+                    var queryString = `?name=${name}&number=${number}&gender=${gender.value}&birthday=${birthday}&group=${group}`;
 
                     // Redirect to the main HTML page with the query parameters
                     window.location.href = `https://fanciful-monstera-d69f4b.netlify.app/index.html${queryString}`;
@@ -51,34 +71,5 @@
             }
         }
     </script>
-</head>
-<body>
-    <form action="/report_page.php">
-        <label for="name">이름:</label><br>
-        <input type="text" id="name" name="name" class="check" value="" placeholder="이름을 입력해주세요." autocomplete="off">
-        <p></p>
-        <br>
-        <label for="number">전화번호:</label><br>
-        <input type="text" id="number" name="number" class="check" value="" placeholder="010-0000-0000" autocomplete="off"><br>
-        <input type="radio" id="man" name="gender" value="man">
-        <label for="man">Man</label><br>
-        <input type="radio" id="girl" name="gender" value="girl">
-        <label for="girl">Girl</label><br>
-        <form>
-            <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday">
-        </form>
-        <label for="group">Group:</label>
-        <select id="group" name="group">
-            <option value="family">Family</option>
-            <option value="coworker">Coworker</option>
-            <option value="friend">Friend</option>
-            <option value="etc">Etc</option>
-        </select>
-        <br>
-        <textarea name="message" rows="2" cols="15"></textarea>
-        <br>
-        <button type="button" onclick="call_confirm(name, number, gender, birthday, group)">add</button>
-    </form>
 </body>
 </html>
