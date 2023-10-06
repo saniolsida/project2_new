@@ -22,11 +22,19 @@
     function getData() {
                     // You may need to make an AJAX request here to fetch data from a PHP API
                     // For simplicity, we'll use PHP sessions here
-                    var name = "<?php echo isset($_SESSION['name']) ? $_SESSION['name'] : ''; ?>";
-                    var number = "<?php echo isset($_SESSION['number']) ? $_SESSION['number'] : ''; ?>";
-                    var gender = "<?php echo isset($_SESSION['gender']) ? $_SESSION['gender'] : ''; ?>";
-                    var birthday = "<?php echo isset($_SESSION['birthday']) ? $_SESSION['birthday'] : ''; ?>";
-                    var group = "<?php echo isset($_SESSION['group']) ? $_SESSION['group'] : ''; ?>";
+                    const urlParams = new URLSearchParams(window.location.search);                  
+                    // Retrieve values using parameter names
+                    const name = urlParams.get('name');
+                    const number = urlParams.get('number');
+                    const gender = urlParams.get('gender');
+                    const birthday = urlParams.get('birthday');
+                    const group = urlParams.get('group');
+                    // Now you can use these values in your JavaScript code
+                    console.log('Name:', name);
+                    console.log('Number:', number);
+                    console.log('Gender:', gender);
+                    console.log('Birthday:', birthday);
+                    console.log('Group:', group);
                     return { name, number, gender, birthday, group };
                 }
                 var formData = getData();
