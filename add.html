@@ -4,44 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script typ="text/javascript">
+    <script type="text/javascript">
         function call_confirm(){
-            if(confirm("제출하시겠습니까?")){
-                alert();
-                <li><a href="https://fanciful-monstera-d69f4b.netlify.app/index.html"></a></li>
+            // Get the values of the input fields
+            var name = document.getElementById("name").value.trim();
+            var number = document.getElementById("number").value.trim();
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var birthday = document.getElementById("birthday").value.trim();
+            var group = document.getElementById("group").value.trim();
+
+            // Check if any of the required fields are empty
+            if (name === "" || number === "" || gender === null || birthday === "" || group === "") {
+                alert("모든 필수 항목을 작성해주세요.");
+            } else {
+                if (confirm("제출하시겠습니까?")) {
+                    // Redirect to index.html
+                    window.location.href = "https://fanciful-monstera-d69f4b.netlify.app/index.html";
+                } else {
+                    alert("제출실패");
+                }
             }
-            else
-                alert("제출실패");
         }
     </script>
 </head>
 <body>
     <form action="/report_page.php">
-            <label for = "name">이름:</label><br>
-            <input type = "text" id="name" name="name"><br>
-            <label for = "number">전화번호:</label><br>
-            <input type = "text" id="number" name="number"><br>
-            <input type="radio" id="man" name="gender" value="man">
-            <label for="man">Man</label><br>
-            <input type="radio" id="girl" name="gender" value="girl">
-            <label for="girl">Girl</label><br>
-            <form>
-                <label for="birthday">Birthday:</label>
-                <input type="date" id="birthday" name="birthday">
-            </form>
-            <label for="group">Group:</label>
-            <select id="group" name="group">
-                <option value="family">Family</option>
-                <option value="coworker">Coworker</option>
-                <option value="friend">Friend</option>
-                <option value="etc">Etc</option>
-            </select>
-            <br>
-            <textarea name="message" rows="2" cols="15">
-                한줄소개
-            </textarea>
-            <br>
-        <button onclick="call_confirm()">add</button>
+        <label for="name">이름:</label><br>
+        <input type="text" id="name" name="name" class="check" value="" placeholder="이름을 입력해주세요." autocomplete="off">
+        <p></p>
+        <br>
+        <label for="number">전화번호:</label><br>
+        <input type="text" id="number" name="number" class="check" value="" placeholder="010-0000-0000" autocomplete="off"><br>
+        <input type="radio" id="man" name="gender" value="man">
+        <label for="man">Man</label><br>
+        <input type="radio" id="girl" name="gender" value="girl">
+        <label for="girl">Girl</label><br>
+        <form>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday">
+        </form>
+        <label for="group">Group:</label>
+        <select id="group" name="group">
+            <option value="family">Family</option>
+            <option value="coworker">Coworker</option>
+            <option value="friend">Friend</option>
+            <option value="etc">Etc</option>
+        </select>
+        <br>
+        <textarea name="message" rows="2" cols="15"></textarea>
+        <br>
+        <button type="button" onclick="call_confirm()">add</button>
     </form>
 </body>
 </html>
