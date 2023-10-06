@@ -47,7 +47,7 @@
     </form>
 
     <script type="text/javascript">
-        function call_confirm() {
+         function call_confirm() {
             // Get the values of the input fields
             var name = document.getElementById("name").value.trim();
             var number = document.getElementById("number").value.trim();
@@ -60,10 +60,11 @@
                 alert("모든 필수 항목을 작성해주세요.");
             } else {
                 if (confirm("저장하시겠습니까?")) {
-                    // Redirect to the main HTML page with the query parameters
-                    alert("저장완료");
+                    // Build the URL with query parameters
+                    var url = `https://fanciful-monstera-d69f4b.netlify.app/index.html?name=${name}&number=${number}&gender=${gender.value}&birthday=${birthday}&group=${group}`;
 
-                    window.location.href = `https://fanciful-monstera-d69f4b.netlify.app/index.html`;
+                    // Redirect to the main HTML page with the query parameters
+                    window.location.href = url;
                 } else {
                     alert("제출실패");
                 }
