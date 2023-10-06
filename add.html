@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script typ="text/javascript">
+        function call_confirm(){
+            if(confirm("제출하시겠습니까?"))
+                alert('제출되었습니다.');
+            else
+                alert("제출실패");
+        }
+    </script>
+</head>
+<body>
+    <form action="/report_page.php">
+            <label for = "name">이름:</label><br>
+            <input type = "text" id="name" name="name"><br>
+            <label for = "number">전화번호:</label><br>
+            <input type = "text" id="number" name="number"><br>
+            <input type="radio" id="man" name="gender" value="man">
+            <label for="man">Man</label><br>
+            <input type="radio" id="girl" name="gender" value="girl">
+            <label for="girl">Girl</label><br>
+            <form>
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday">
+            </form>
+            <label for="group">Group:</label>
+            <select id="group" name="group">
+                <option value="family">Family</option>
+                <option value="coworker">Coworker</option>
+                <option value="friend">Friend</option>
+                <option value="etc">Etc</option>
+            </select>
+            <br>
+            <textarea name="message" rows="2" cols="15">
+                한줄소개
+            </textarea>
+            <br>
+        <button onclick="call_confirm()">add</button>
+    </form>
+</body>
+</html>
