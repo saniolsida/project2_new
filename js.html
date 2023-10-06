@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script typ="text/javascript">
+        function call_confirm(){
+            if(confirm("제출하시겠습니까?"))
+                alert('제출되었습니다.');
+            else
+                alert("제출실패");
+        }
+        function mouseover(){
+            document.getElementById("onmouse").style.color = "red";
+            document.getElementById("onmouse").innerHTML = "I am red in color";
+        }
+    </script>
+</head>
+<body>
+    
+    <select id="country" name="country" onchange="countryselect()">
+        <option value="" selected disabled>Choose your country</option>
+        <option value="korea">Korea</option>
+        <option value="japan">Japan</option>
+        <option value="china">China</option>
+    </select>
+    <script>
+        function countryselect(){
+            var yourcountry = document.getElementById("country");
+            var selectedcountry = yourcountry.options[yourcountry.selectedIndex].value;
+            var selectedText = yourcountry.options[yourcountry.selectedIndex].text;
+        }
+    </script>
+    <br>
+    <p id="onmouse" onmouseover="mouseover()">I am black in color</p>
+    <button onclick="call_confirm()" >submit</button>
+</body>
+</html>
