@@ -12,13 +12,22 @@
                 alert("제출실패");
         }
         function mouseover(){
-            document.getElementById("onmouse").style.color = "red";
-            document.getElementById("onmouse").innerHTML = "I am red in color";
+            document.getElementById("on_out_mouse").style.color = "red";
+            document.getElementById("on_out_mouse").innerHTML = "I am red in color";
+        }
+        function mouseout(){
+            document.getElementById("on_out_mouse").style.color = "black";
+            document.getElementById("on_out_mouse").innerHTML = "I am black in color";
+        }
+        function mykeydown(){
+            var obj = document.getElementById('keydown');
+            obj.style.background = 'red';
         }
     </script>
 </head>
 <body>
-    
+    <input type="text" id="keydown" onkeydown="mykeydown()">
+    <br>
     <select id="country" name="country" onchange="countryselect()">
         <option value="" selected disabled>Choose your country</option>
         <option value="korea">Korea</option>
@@ -33,7 +42,7 @@
         }
     </script>
     <br>
-    <p id="onmouse" onmouseover="mouseover()">I am black in color</p>
+    <p id="on_out_mouse" onmouseover="mouseover()" onmouseout="mouseout()">I am black in color</p>
     <button onclick="call_confirm()" >submit</button>
 </body>
 </html>
