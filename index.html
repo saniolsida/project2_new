@@ -27,7 +27,6 @@
                     var gender = "<?php echo isset($_SESSION['gender']) ? $_SESSION['gender'] : ''; ?>";
                     var birthday = "<?php echo isset($_SESSION['birthday']) ? $_SESSION['birthday'] : ''; ?>";
                     var group = "<?php echo isset($_SESSION['group']) ? $_SESSION['group'] : ''; ?>";
-
                     return { name, number, gender, birthday, group };
                 }
                 var formData = getData();
@@ -69,11 +68,11 @@
     <h3>INDEX</h3><br>
     <div class="row">
       <div class="col-sm-3">
-        <script>document.write(`Name: ${formData.name}<br>`);</script>
+        <script>document.write(formData.name);</script>
         <img src="/image/basic_image.png" class="img-responsive" style="width:100%" alt="Image">
       </div>
       <div class="col-sm-3"> 
-        <script>document.write(name);</script>
+        <script>document.write(formData.name);</script>
         <img src="/image/basic_image.png" class="img-responsive" style="width:100%" alt="Image">
       </div>
       <div class="col-sm-3"> 
