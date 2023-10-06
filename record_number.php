@@ -1,14 +1,19 @@
 <?php
+$DB = new SQLite3('number_table.db');
+if($DB->lastErrorCode() != 0)
+    echo "Data connection failed"
+
     $name = $_POST['name'];
     $number = $_POST['number'];
     $gender = $_POST['gender'];
     $birthday = $_POST['birthday'];
     $group = $_POST['group'];
-    $url = 'index.html' . '?name=' . urlencode($name) . '&number=' . urlencode($number) . 
-    '&gender=' . urlencode($gender) . '&birthday=' . urlencode($birthday) . '&group=' . urlencode($group);
-    // Redirect to the index.html page with the parameters
-    header('Location: ' . $url);
-    exit;
+    $DB->exec("INSERT INTO 'number_index' (name) VALUES ($name)");
+    $DB->exec("INSERT INTO 'number_index' (number) VALUES ($number)");
+    $DB->exec("INSERT INTO 'number_index' (gender) VALUES ($gender)");
+    $DB->exec("INSERT INTO 'number_index' (birthday) VALUES ($birthday)");
+    $DB->exec("INSERT INTO 'number_index' (group) VALUES ($group)");
+    $DB->exec("INSERT INTO 'number_index' (massage) VALUES ($message)");
 ?>
 <!DOCTYPE html>
 <html lang="en">
