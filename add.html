@@ -20,7 +20,7 @@
     <title>Add Page</title>
 </head>
 <body>
-    <form action="index.html" onsubmit="return validateForm()" method="post">
+    <form action="record_number.php" onsubmit="return validateForm()" method="post">
         <label for="name">이름:</label><br>
         <input type="text" id="name" name="name" class="check" placeholder="이름을 입력해주세요." autocomplete="off">
         <p></p>
@@ -43,7 +43,7 @@
         <br>
         <textarea name="message" rows="2" cols="15"></textarea>
         <br>
-        <button type="button" onclick="call_confirm()">Add</button>
+        <button type="submit" onclick="call_confirm()">Add</button>
     </form>
 
     <script type="text/javascript">

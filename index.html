@@ -18,6 +18,21 @@
       padding: 25px;
     }
   </style>
+   <script>
+    function getData() {
+                    // You may need to make an AJAX request here to fetch data from a PHP API
+                    // For simplicity, we'll use PHP sessions here
+                    var name = "<?php echo isset($_SESSION['name']) ? $_SESSION['name'] : ''; ?>";
+                    var number = "<?php echo isset($_SESSION['number']) ? $_SESSION['number'] : ''; ?>";
+                    var gender = "<?php echo isset($_SESSION['gender']) ? $_SESSION['gender'] : ''; ?>";
+                    var birthday = "<?php echo isset($_SESSION['birthday']) ? $_SESSION['birthday'] : ''; ?>";
+                    var group = "<?php echo isset($_SESSION['group']) ? $_SESSION['group'] : ''; ?>";
+
+                    return { name, number, gender, birthday, group };
+                }
+                var formData = getData();
+            </script>
+</script>
 </head>
 <body>
   <nav class="navbar navbar-inverse">
@@ -30,24 +45,6 @@
         </button>
         <a class="navbar-brand" href="#">The White Pages</a>
       </div>
-      <script>
-        var urlParams = new URLSearchParams(window.location.search);
-        var name = urlParams.get('name');
-        var number = urlParams.get('number');
-        var gender = urlParams.get('gender');
-        var birthday = urlParams.get('birthday');
-        var group = urlParams.get('group');
-        
-        // Check if the parameters are not null
-        if (name && number && gender && birthday && group) {
-            // Display the values
-            document.write(`Name: ${name}<br>`);
-            document.write(`Number: ${number}<br>`);
-            document.write(`Gender: ${gender}<br>`);
-            document.write(`Birthday: ${birthday}<br>`);
-            document.write(`Group: ${group}<br>`);
-        }
-    </script>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
@@ -72,19 +69,19 @@
     <h3>INDEX</h3><br>
     <div class="row">
       <div class="col-sm-3">
-        <script>document.write(name[0]);</script>
+        <script>document.write(`Name: ${formData.name}<br>`);</script>
         <img src="/image/basic_image.png" class="img-responsive" style="width:100%" alt="Image">
       </div>
       <div class="col-sm-3"> 
-        <script>document.write(name[1]);</script>
+        <script>document.write(name);</script>
         <img src="/image/basic_image.png" class="img-responsive" style="width:100%" alt="Image">
       </div>
       <div class="col-sm-3"> 
-        <script>document.write(name[2]);</script>
+        <script>document.write(name);</script>
         <img src="/image/basic_image.png" class="img-responsive" style="width:100%" alt="Image">
       </div>
       <div class="col-sm-3">
-        <script>document.write(name[3]);</script>
+        <script>document.write(name);</script>
         <img src="/image/basic_image.png" class="img-responsive" style="width:100%" alt="Image">
       </div>
     </div>
@@ -93,19 +90,19 @@
   <div class="container-fluid bg-3 text-center">    
     <div class="row">
       <div class="col-sm-3">
-        <script>document.write(name[4]);</script>
+        <script>document.write(name);</script>
         <img src="/image/basic_image.png" class="img-responsive" style="width:100%" alt="Image">
       </div>
       <div class="col-sm-3"> 
-        <script>document.write(name[5]);</script>
+        <script>document.write(name);</script>
         <img src="/image/basic_image.png" class="img-responsive" style="width:100%" alt="Image">
       </div>
       <div class="col-sm-3"> 
-        <script>document.write(name[6]);</script>
+        <script>document.write(name);</script>
         <img src="/image/basic_image.png" class="img-responsive" style="width:100%" alt="Image">
       </div>
       <div class="col-sm-3">
-        <script>document.write(name[7]);</script>
+        <script>document.write(name);</script>
         <img src="/image/basic_image.png" class="img-responsive" style="width:100%" alt="Image">
       </div>
     </div>

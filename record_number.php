@@ -4,32 +4,16 @@
     $gender = $_POST['gender'];
     $birthday = $_POST['birthday'];
     $group = $_POST['group'];
-    $message = $_POST['message'];
+
+    // Store the form data in a PHP session or a database as needed
+    session_start();
+    $_SESSION['name'] = $name;
+    $_SESSION['number'] = $number;
+    $_SESSION['gender'] = $gender;
+    $_SESSION['birthday'] = $birthday;
+    $_SESSION['group'] = $group;
+
+    // Redirect to index.html
+    header("Location: index.html");
+    exit;
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        var name = [];
-        var number = [];
-        var gender = [];
-        var birthday = [];
-        var group = [];
-        var message = [];
-        if(name){
-            name.push(<?= $name?>);
-            number.push(<?= $number?>);
-            gender.push(<?= $gender?>);
-            birthday.push(<?= $birthday?>);
-            group.push(<?= $group?>);
-            message.push(<?= $message?>);
-        }
-    </script>
-</head>
-<body>
-    <div><?= $name?></div>
-</body>
-</html>
