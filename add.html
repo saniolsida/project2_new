@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="addinput" href="">
+    <style>
+        .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+        }
+        
+        footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+        }
+    </style>
     <title>Document</title>
     <script type="text/javascript">
-        function call_confirm(){
+        function call_confirm(name, number, gender, birthday, group){
             // Get the values of the input fields
             var name = document.getElementById("name").value.trim();
             var number = document.getElementById("number").value.trim();
@@ -18,8 +34,17 @@
                 alert("모든 필수 항목을 작성해주세요.");
             } else {
                 if (confirm("제출하시겠습니까?")) {
-                    // Redirect to index.html
-                    window.location.href = "https://fanciful-monstera-d69f4b.netlify.app/index.html";
+                    var name = document.getElementById("name").value;
+                    var number = document.getElementById("number").value;
+                    var gender = document.querySelector('input[name="gender"]:checked').value;
+                    var birthday = document.getElementById("birthday").value;
+                    var group = document.getElementById("group").value;
+
+                    // Construct the query string with the values
+                    var queryString = `?name=${name}&number=${number}&gender=${gender}&birthday=${birthday}&group=${group}`;
+
+                    // Redirect to the main HTML page with the query parameters
+                    window.location.href = `https://fanciful-monstera-d69f4b.netlify.app/index.html${queryString}`;
                 } else {
                     alert("제출실패");
                 }
@@ -53,7 +78,7 @@
         <br>
         <textarea name="message" rows="2" cols="15"></textarea>
         <br>
-        <button type="button" onclick="call_confirm()">add</button>
+        <button type="button" onclick="call_confirm(name, number, gender, birthday, group)">add</button>
     </form>
 </body>
 </html>

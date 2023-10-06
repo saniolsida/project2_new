@@ -19,10 +19,29 @@
       padding: 25px;
     }
   </style>
-
 </head>
 <body>
+  <script>
+    // Function to get query parameters from the URL
+    function getQueryParams() {
+        var queryString = window.location.search;
+        var params = new URLSearchParams(queryString);
+        return params;
+    }
 
+    // Get and use the query parameters
+    var queryParams = getQueryParams();
+    var name = queryParams.get("name");
+    var number = queryParams.get("number");
+    var gender = queryParams.get("gender");
+    var birthday = queryParams.get("birthday");
+    var group = queryParams.get("group");
+
+    var namePlaceholer = document.getElementById("namePlaceholder");
+    if(namePlaceholer && name){
+      namePlaceholer.textContent = "Name: " + name;
+    }
+</script>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -57,7 +76,7 @@
   <h3>INDEX</h3><br>
   <div class="row">
     <div class="col-sm-3">
-      <p>Some text..</p>
+      <p id="namePlaceholer"></p>
       <img src="/image/basic_image.png" class="img-responsive" style="width:100%" alt="Image">
     </div>
     <div class="col-sm-3"> 
