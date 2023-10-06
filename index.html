@@ -21,6 +21,7 @@
 </head>
 <body>
   <script>
+    var namearray = ['Blank',];
     // Function to get query parameters from the URL
     function getQueryParams() {
         var queryString = window.location.search;
@@ -36,10 +37,8 @@
     var birthday = queryParams.get("birthday");
     var group = queryParams.get("group");
 
-    var namePlaceholder = document.getElementById("namePlaceholder");
-    if (namePlaceholder && name) {
-        namePlaceholder.textContent = "Name: " + name;
-    }
+    if(name)
+      namearray.push(name);
   </script>
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -75,7 +74,7 @@
     <h3>INDEX</h3><br>
     <div class="row">
       <div class="col-sm-3">
-        <p id="namePlaceholder"></p>
+        <script>document.write(namearray[0]);</script>
         <img src="/image/basic_image.png" class="img-responsive" style="width:100%" alt="Image">
       </div>
       <div class="col-sm-3"> 
