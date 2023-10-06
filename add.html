@@ -20,7 +20,7 @@
     <title>Add Page</title>
 </head>
 <body>
-    <form>
+    <form action="record_number.php" onsubmit="return validateForm()" method="post">
         <label for="name">이름:</label><br>
         <input type="text" id="name" name="name" class="check" placeholder="이름을 입력해주세요." autocomplete="off">
         <p></p>
@@ -54,17 +54,16 @@
             var gender = document.querySelector('input[name="gender"]:checked');
             var birthday = document.getElementById("birthday").value.trim();
             var group = document.getElementById("group").value.trim();
-
+            
             // Check if any of the required fields are empty
             if (name === "" || number === "" || gender === null || birthday === "" || group === "") {
                 alert("모든 필수 항목을 작성해주세요.");
             } else {
-                if (confirm("제출하시겠습니까?")) {
-                    // Construct the query string with the values
-                    var queryString = `?name=${name}&number=${number}&gender=${gender.value}&birthday=${birthday}&group=${group}`;
-
+                if (confirm("저장하시겠습니까?")) {
                     // Redirect to the main HTML page with the query parameters
-                    window.location.href = `https://fanciful-monstera-d69f4b.netlify.app/index.html${queryString}`;
+                    alert("저장완료");
+
+                    window.location.href = `https://fanciful-monstera-d69f4b.netlify.app/index.html`;
                 } else {
                     alert("제출실패");
                 }

@@ -21,19 +21,11 @@
 </head>
 <body>
   <script>
-    // Function to retrieve form data from localStorage
-    function getFormData() {
-        var formDataArray = JSON.parse(localStorage.getItem("formDataArray")) || [];
-        return formDataArray;
-    }
-
-    // Get and use the form data
-    var formDataArray = getFormData();
-    var name = [];
-    for(var i=0; i < formDataArray.length; i++)
-    {
-      name.push(formDataArray[i].name);
-    }
+      var name = localStorage.getItem(name);
+      var number = localStorage.getItem(number);
+      var gender = localStorage.getItem(gender);
+      var birthday = localStorage.getItem(birthday);
+      var group = localStorage.getItem(name);
 </script>
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
