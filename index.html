@@ -29,10 +29,10 @@
 
     // Get and use the form data
     var formDataArray = getFormData();
-    var name = ['Blank','Blank','Blank','Blank','Blank','Blank','Blank','Blank'];
+    var name = [];
     for(var i=0; i < formDataArray.length; i++)
     {
-      name[i] = formDataArray[i].name;
+      name.push(formDataArray[i].name);
     }
 </script>
   <nav class="navbar navbar-inverse">
