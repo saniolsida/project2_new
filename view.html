@@ -1,16 +1,143 @@
-import sqlite3
-from sqlite3 import Error
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="my.css">
+    <title>View List</title>
+    <script>
+        var tname = ["CJ", "Ronaldo", "Messi", "Trump", "Sonny", "Dragon J", "Beenjino", "Duckbae"];
+        var number = ["010-1010-1021", "10-1111-5952", "49-124-5125", "010-2605-4159","20-1102-5125", "82-5550-1294", "010-2501-2591", "21-112-5255"];
+        var birthday = ["1992-04-12","1945-12-01","2005-01-16","1882-06-06","1983-08-07","1976-12-13","1988-08-08","2001-04-20"];
+        var gender = ["Man","Man","Man","Girl","Man","Girl","Man","Girl"];
+        var group = ["Friends","Family","Friends","Friends","Coworker","Coworker","Family","etc"];
+        var message = ["He is man","North Korean","From Usa","Poor","He is korean","My dad","My brother","Who is he?"];
+    </script>
+    
 </head>
 <body>
-    <form name="form" action="record_number.php" onsubmit="return validateForm()" method="post">
-         제목: <input type="text" name="subject"><br>
-        <input type="submit" value="저장">
-    </form>
+    <div class="container-fluid bg-3 text-center">    
+        <h3>INDEX</h3><br>
+        <div class="row">
+          <div class="col-sm-3">
+            <script>document.write(tname[0]);</script>
+            <br>
+            <script>document.write(number[0]);</script>
+            <br>
+            <script>document.write(gender[0]);</script>
+            <br>
+            <script>document.write(birthday[0]);</script>
+            <br>
+            <script>document.write(group[0]);</script>
+            <br>
+            <script>document.write(message[0]);</script>
+            <br>
+          </div>
+          <div class="col-sm-3"> 
+            <script>document.write(tname[1]);</script>
+            <br>
+            <script>document.write(number[1]);</script>
+            <br>
+            <script>document.write(gender[1]);</script>
+            <br>
+            <script>document.write(birthday[1]);</script>
+            <br>
+            <script>document.write(group[1]);</script>
+            <br>
+            <script>document.write(message[1]);</script>
+            <br>
+          </div>
+          <div class="col-sm-3"> 
+            <script>document.write(tname[2]);</script>
+            <br>
+            <script>document.write(number[2]);</script>
+            <br>
+            <script>document.write(gender[2]);</script>
+            <br>
+            <script>document.write(birthday[2]);</script>
+            <br>
+            <script>document.write(group[2]);</script>
+            <br>
+            <script>document.write(message[2]);</script>
+            <br>
+          </div>
+          <div class="col-sm-3">
+            <script>document.write(tname[3]);</script>
+            <br>
+            <script>document.write(number[3]);</script>
+            <br>
+            <script>document.write(gender[3]);</script>
+            <br>
+            <script>document.write(birthday[3]);</script>
+            <br>
+            <script>document.write(group[3]);</script>
+            <br>
+            <script>document.write(message[3]);</script>
+          </div>
+        </div>
+      </div><br>
+    
+      <div class="container-fluid bg-3 text-center">    
+        <div class="row">
+          <div class="col-sm-3">
+            <script>document.write(tname[4]);</script>
+            <br>
+            <script>document.write(number[4]);</script>
+            <br>
+            <script>document.write(gender[4]);</script>
+            <br>
+            <script>document.write(birthday[4]);</script>
+            <br>
+            <script>document.write(group[4]);</script>
+            <br>
+            <script>document.write(message[4]);</script>
+            <br>
+          </div>
+          <div class="col-sm-3"> 
+            <script>document.write(tname[5]);</script>
+            <br>
+            <script>document.write(number[5]);</script>
+            <br>
+            <script>document.write(gender[5]);</script>
+            <br>
+            <script>document.write(birthday[5]);</script>
+            <br>
+            <script>document.write(group[5]);</script>
+            <br>
+            <script>document.write(message[5]);</script>
+          </div>
+          <div class="col-sm-3"> 
+            <script>document.write(tname[6]);</script>
+            <br>
+            <script>document.write(number[6]);</script>
+            <br>
+            <script>document.write(gender[6]);</script>
+            <br>
+            <script>document.write(birthday[6]);</script>
+            <br>
+            <script>document.write(group[6]);</script>
+            <br>
+            <script>document.write(message[6]);</script>
+            <br>
+          </div>
+          <div class="col-sm-3">
+            <script>document.write(tname[7]);</script>
+            <br>
+            <script>document.write(number[7]);</script>
+            <br>
+            <script>document.write(gender[7]);</script>
+            <br>
+            <script>document.write(birthday[7]);</script>
+            <br>
+            <script>document.write(group[7]);</script>
+            <br>
+            <script>document.write(message[7]);</script>
+            <br>
+          </div>
+        </div>
+      </div><br><br>
 </body>
 </html>
