@@ -3,9 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="my.css">
     <style>
         .navbar {
         margin-bottom: 0;
@@ -43,7 +41,7 @@
         <br>
         <textarea name="message" rows="2" cols="15"></textarea>
         <br>
-        <button type="button" onclick="call_confirm()" value="저장">Add</button>
+        <button type="submit" onclick="call_confirm()" value="저장">Add</button>
         <li><a href="https://fanciful-monstera-d69f4b.netlify.app/index.html">Back</a></li>
     </form>
 
@@ -55,16 +53,15 @@
             var gender = document.querySelector('input[name="gender"]:checked');
             var birthday = document.getElementById("birthday").value.trim();
             var group = document.getElementById("group").value.trim();
-            
             // Check if any of the required fields are empty
             if (name === "" || number === "" || gender === null || birthday === "" || group === "") {
-                alert("모든 필수 항목을 작성해주세요.");
+                alert("모든 항목을 작성해주세요.");
             } else {
                 if (confirm("저장하시겠습니까?")) {
                     // Build the URL with query parameters
                     alert("저장완료");
                 } else {
-                    alert("제출실패");
+                    alert("저장취소");
                 }
             }
         }
