@@ -51,7 +51,7 @@
         <div class="row"></a>    
         
           <div class="col-sm-3">
-            <a href="#"><script>document.write(tname[0]);</script></a>
+            <a href="#" onclick="call_confirm()"><script>document.write(tname[0]);</script></a>
             <br>
             <script>document.write(number[0]);</script>
             <br>
@@ -65,7 +65,7 @@
             <br>
           </div>
           <div class="col-sm-3"> 
-            <a href="#"><script>document.write(tname[1]);</script></a>
+            <a href="#" onclick="call_confirm()"><script>document.write(tname[1]);</script></a>
             <br>
             <script>document.write(number[1]);</script>
             <br>
@@ -79,7 +79,7 @@
             <br>
           </div>
           <div class="col-sm-3"> 
-            <a href="#"><script>document.write(tname[2]);</script></a>
+            <a href="#" onclick="call_confirm()"><script>document.write(tname[2]);</script></a>
             <br>
             <script>document.write(number[2]);</script>
             <br>
@@ -93,7 +93,7 @@
             <br>
           </div>
           <div class="col-sm-3">
-            <a href="#"><script>document.write(tname[3]);</script></a>
+            <a href="#" onclick="call_confirm()"><script>document.write(tname[3]);</script></a>
             <br>
             <script>document.write(number[3]);</script>
             <br>
@@ -111,7 +111,7 @@
       <div class="container-fluid bg-3 text-center">    
         <div class="row">
           <div class="col-sm-3">
-            <a href="#"><script>document.write(tname[4]);</script></a>
+            <a href="#" onclick="call_confirm()"><script>document.write(tname[4]);</script></a>
             <br>
             <script>document.write(number[4]);</script>
             <br>
@@ -125,7 +125,7 @@
             <br>
           </div>
           <div class="col-sm-3"> 
-            <a href="#"><script>document.write(tname[5]);</script></a>
+            <a href="#" onclick="call_confirm()"><script>document.write(tname[5]);</script></a>
             <br>
             <script>document.write(number[5]);</script>
             <br>
@@ -138,7 +138,7 @@
             <script>document.write(message[5]);</script>
           </div>
           <div class="col-sm-3"> 
-            <a href="#"><script>document.write(tname[6]);</script></a>
+            <a href="#" onclick="call_confirm()"><script>document.write(tname[6]);</script></a>
             <br>
             <script>document.write(number[6]);</script>
             <br>
@@ -152,7 +152,7 @@
             <br>
           </div>
           <div class="col-sm-3">
-            <a href="#"><script>document.write(tname[7]);</script></a>
+            <a href="#" onclick="call_confirm()"><script>document.write(tname[7]);</script></a>
             <br>
             <script>document.write(number[7]);</script>
             <br>
@@ -167,5 +167,14 @@
           </div>
         </div>
       </div><br><br>
+      <script type="text/javascript">
+        function call_confirm() {
+               if (confirm("수정하시겠습니까?")) {
+                window.location.href = "https://fanciful-monstera-d69f4b.netlify.app/add.html";
+               } else {
+                   alert("취소");
+               }
+           }
+   </script>
 </body>
 </html>
